@@ -28,7 +28,7 @@ class IncidentsList extends React.Component {
 
   fetchURL(page) {
 
-    axios.get(`http://localhost:8080/reports?page=${page}&size=12`)
+    axios.get(`http://localhost:8080/reports?page=${page}&size=30`)
       .then( response => {
 
           const totalPages = response.data.totalPages;
@@ -102,7 +102,7 @@ class IncidentsList extends React.Component {
               <h1>Total Reports: <span>{totalItemsCount}</span></h1>
             </div>
             <SearchBox searchChange={this.onSearchChange}/>
-            <div className="d-flex justify-content-center">
+            <div className="d-flex justify-content-center center">
                 <Pagination
                   hideNavigation
                   activePage={activePage}
