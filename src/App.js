@@ -1,6 +1,7 @@
 import Header from './components/Header'
 import IncidentsList  from './components/IncidentsList'
 import Particles from 'react-particles-js';
+import AppNav from './components/AppNav';
 import './App.css';
 
 const particlesOptions = {
@@ -18,8 +19,9 @@ const particlesOptions = {
 function App() {
   return (
     <div className="App">
+      <AppNav />
       <Header />
-      <div className="">
+      <div>
           <IncidentsList />
           <Particles  className='particles' params={particlesOptions}/>
         </div>

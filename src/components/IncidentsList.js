@@ -28,7 +28,7 @@ class IncidentsList extends React.Component {
 
   fetchURL(page) {
 
-    axios.get(`http://localhost:8080/reports?page=${page}&size=9`)
+    axios.get(`http://localhost:8080/reports?page=${page}&size=12`)
       .then( response => {
 
           const totalPages = response.data.totalPages;
