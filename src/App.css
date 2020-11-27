@@ -16,9 +16,13 @@
   z-index: -1;
 }
   
-  h1 {
-    font-family: "Times New Roman", Times, serif;
-    font-weight: 200;
-    font-style: italic;
-    color: #97d8d7;
-  }
+h1 {
+  font-family: "Times New Roman", Times, serif;
+  font-weight: 200;
+  font-style: italic;
+  color: #97d8d7;
+}
+
+.incCard {
+  background: linear-gradient(to left, rgb(65, 97, 139) 0%, rgb(34, 54, 114) 100%); /* w3c */
+}
