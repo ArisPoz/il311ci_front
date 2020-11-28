@@ -3,24 +3,24 @@ import DataService from "../services/DataService";
 
 const AddIncident = () => {
   const initialState = {
-    completionDate: "",
-    creationDate: "",
+    completionDate: null,
+    creationDate: null,
     reportId: null,
-    serviceRequestNumber: "",
-    status: "",
+    serviceRequestNumber: null,
+    status: null,
     type: {
-      serviceType: "",
+      serviceType: null,
       typeId: null
     },
     location: {
         latitude: 0,
         locationId: null,
-        locationLogLat: "",
+        locationLogLat: null,
         longitude: 0,
-        streetAddress: "",
+        streetAddress: null,
         xCoordinate: 0,
         yCoordinate: 0,
-        zipCode: ""
+        zipCode: null
     },
     authority: {
         authorityId: null,
@@ -38,8 +38,7 @@ const AddIncident = () => {
   const [report, setReport] = useState(initialState);
   const [submitted, setSubmitted] = useState(false);
 
-  const handleInputChange = event => {
-    const { name, value } = event.target;
+  const handleInputChange = (name, value) => {
     setReport({ ...report, [name]: value });
   };
 
@@ -81,10 +80,37 @@ const AddIncident = () => {
     DataService.create(data)
       .then(response => {
         setReport({
-          id: response.data.id,
-          title: response.data.title,
-          description: response.data.description,
-          published: response.data.published
+            completionDate: response.data.completionDate,
+            creationDate: response.data.creationDate,
+            reportId: null,
+            serviceRequestNumber: response.data.serviceRequestNumber,
+            status: response.data.status,
+            type: {
+              serviceType: response.data.serviceType,
+              typeId: null
+            },
+            location: {
+                latitude: response.data.latitude,
+                locationId: null,
+                locationLogLat: response.data.locationLogLat,
+                longitude: response.data.longitude,
+                streetAddress: response.data.streetAddress,
+                xCoordinate: response.data.xCoordinate,
+                yCoordinate: response.data.yCoordinate,
+                zipCode: response.data.zipCode
+            },
+            authority: {
+                authorityId: null,
+                censusTracts: response.data.censusTracts,
+                communityArea: response.data.communityArea,
+                communityAreas: response.data.communityAreas,
+                historicalWards: response.data.historicalWards,
+                policeDistrict: response.data.policeDistrict,
+                ssa: response.data.ssa,
+                ward: response.data.ward,
+                wards: response.data.wards,
+                zipCodes: response.data.zipCodes
+            }
         });
         setSubmitted(true);
         console.log(response.data);
@@ -172,7 +198,7 @@ const AddIncident = () => {
               className="form-control"
               id="streetAddress"
               value={report.streetAddress}
-              onChange={handleInputChange}
+              onChange={e => handleInputChange()}
               name="streetAddress"
             />
           </div>

@@ -26,6 +26,11 @@ class App extends Component{
                   </Link>
                 </li>
               </div>
+              <li className="nav-item">
+                  <div className="float-left">
+                  Aristotelis Pozidis CS1200002
+                  </div>
+              </li>
             </nav>
             <Switch>
               <Route exact path={["/", "/homepage"]} component={Homepage} />
