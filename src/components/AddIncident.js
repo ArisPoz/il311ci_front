@@ -131,7 +131,7 @@ const AddIncident = () => {
         <div>
           <h4>You submitted successfully!</h4>
           <button className="btn btn-success" onClick={newReport}>
-            Add
+            Return to Homepage
           </button>
         </div>
       ) : (
