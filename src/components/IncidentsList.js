@@ -2,8 +2,8 @@ import React from 'react';
 import axios from 'axios';
 import Pagination from "react-js-pagination";
 import Incidents  from './Incidents';
-import Schroll from './Scroll'
-import SearchBox from './SearchBox'
+import Schroll from './Scroll';
+import SearchBox from './SearchBox';
 
 class IncidentsList extends React.Component {
 
