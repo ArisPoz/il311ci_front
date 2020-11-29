@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import AddIncident from './components/AddIncident';
 import Homepage from './components/Homepage';
+import Queries from './components/Queries';
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import './App.css';
 
@@ -25,6 +26,11 @@ class App extends Component{
                     Add
                   </Link>
                 </li>
+                <li className="nav-item">
+                  <Link to={"/queries"} className="nav-link">
+                    Queries
+                  </Link>
+                </li>
               </div>
               <li className="nav-item">
                   <div className="float-left">
@@ -36,6 +42,7 @@ class App extends Component{
               <Route exact path={["/", "/homepage"]} component={Homepage} />
               <div className="container mt-3">
               <Route exact path="/add" component={AddIncident} />
+              <Route exact path="/queries" component={Queries} />
               </div>
             </Switch>
           </div>

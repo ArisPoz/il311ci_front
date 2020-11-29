@@ -23,6 +23,14 @@ h1 {
   color: #97d8d7;
 }
 
+p {
+  color: white;
+}
+
+Label {
+  color: white;
+}
+
 .incCard {
   background: linear-gradient(to left, rgb(65, 97, 139) 0%, rgb(34, 54, 114) 100%); /* w3c */
 }

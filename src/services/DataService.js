@@ -20,10 +20,15 @@ const remove = id => {
   return http.delete(`/deleteReport/${id}`);
 };
 
+const query = (url, params) => {
+  return http.get(`/reports/${url}/`, { params });
+};
+
 export default {
   getAll,
   get,
   create,
   update,
-  remove
+  remove,
+  query
 };

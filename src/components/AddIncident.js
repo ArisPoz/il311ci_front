@@ -127,7 +127,7 @@ const AddIncident = () => {
 
   return (
     <div className="submit-form">
-      {submitted ? (
+      {!submitted ? (
         <div>
           <h4>You submitted successfully!</h4>
           <button className="btn btn-success" onClick={newReport}>
